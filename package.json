@@ -27,6 +27,7 @@
         "apexcharts": "^5.3.4",
         "dropzone": "^6.0.0-beta.2",
         "flatpickr": "^4.6.13",
-        "jsvectormap": "^1.7.0"
+        "jsvectormap": "^1.7.0",
+        "simple-datatables": "^10.0.0"
     }
 }
