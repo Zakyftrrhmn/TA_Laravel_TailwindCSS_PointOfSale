@@ -3,14 +3,14 @@
     <a class="navbar-brand" href="./index.html">
       <div class="flex flex-row gap-x-2 items-center justify-center">
         <img src="{{asset('assets/images/logo/logo1.png')}}" class="w-7 h-7" alt="" />
-        <span class="text-red-600 text-shadow-md text-md font-extrabold uppercase">Sistem Penjualan</span>
+        <span class="text-red-600 text-shadow-xs text-lg font-extrabold">Sistem Penjualan</span>
       </div>
     </a>
 
     <ul class="navbar-nav flex-col" id="sideNavbar">
       {{-- Dashboard --}}
       <li class="nav-item px-2">
-        <a class="nav-link active" href="./index.html">
+        <a class="nav-link " href="./index.html">
           <i class="bx bxs-dashboard w-4 h-4 mr-2"></i>
           Dashboard
         </a>
@@ -21,7 +21,7 @@
         <div class="navbar-heading">Master Data</div>
       </li>
       <li class="nav-item px-2">
-        <a class="nav-link" href="#">
+        <a class="nav-link {{ request()->routeIs('admin.kategori_produk*') ? 'active' : '' }}" href="#">
           <i class="bx bx-category w-4 h-4 mr-2"></i>
           Kategori Produk
         </a>

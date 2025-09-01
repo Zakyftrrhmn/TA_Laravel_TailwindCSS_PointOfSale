@@ -1,12 +1,12 @@
 @extends('layouts.main')
-@section('title', 'Produk')
+@section('title', 'Kategori Produk')
 @section('content')
 
 <div class="container mx-auto px-4 py-8">
     <div class="bg-white shadow-lg rounded-xl overflow-hidden">
         
         <div class="p-6 border-b border-gray-200 flex flex-col gap-x-3 md:flex-row justify-between items-center space-y-4 md:space-y-0 whitespace-nowrap">
-            <h2 class="text-lg font-semibold text-gray-800">Daftar Produk</h2>
+            <h2 class="text-lg font-semibold text-gray-800">Kategori Produk</h2>
             
             <div class="flex items-center space-x-4 w-full md:w-auto">
                 
@@ -27,7 +27,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
                 </svg>
-                Tambah Produk Baru
+                Tambah Kategori Produk
             </a>
         </div>
 
@@ -55,7 +55,7 @@
                 <tbody id="product-table-body" class="bg-white divide-y divide-gray-200">
                     <tr>
                         <td colspan="5" class="px-6 py-4 text-center text-gray-500 italic">
-                            Tidak ada data produk yang ditemukan.
+                            Tidak ada data kategori produk yang ditemukan.
                         </td>
                     </tr>
                 </tbody>

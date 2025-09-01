@@ -87,6 +87,55 @@
 
             <div class="main-content p-6">
               @yield('content')
+
+
+              {{-- Modal --}}
+              <div 
+                  x-data="{ show: false, id: null }" 
+                  x-on:open-delete-modal.window="show = true; id = $event.detail.id" 
+                  x-on:close-delete-modal.window="show = false"
+                  x-show="show" 
+                  class="fixed inset-0 z-50 flex items-center justify-center p-4"
+                  style="display: none;"
+              >
+                  <div x-show="show" x-transition.opacity.duration.300ms class="fixed inset-0 bg-gray-900 opacity-50"></div>
+
+                  <div x-show="show" x-transition.opacity.duration.300ms.scale.95 class="bg-white rounded-lg shadow-xl transform transition-all max-w-lg w-full p-6 relative">
+                      <button type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-500" x-on:click="show = false">
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                      </button>
+                      <div class="md:flex md:items-start">
+                          <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 md:mx-0 md:h-10 md:w-10">
+                              <i class='bx bxs-trash text-2xl text-red-600'></i>
+                          </div>
+                          <div class="mt-3 text-center md:mt-0 md:ml-4 md:text-left">
+                              <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                  Hapus Data @yield('title')
+                              </h3>
+                              <div class="mt-2">
+                                  <p class="text-sm text-gray-500">
+                                      Apakah Anda yakin ingin menghapus data ini? Aksi ini tidak dapat dibatalkan.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="mt-5 md:mt-4 md:flex md:flex-row-reverse md:space-x-0 md:space-x-reverse">
+                          <form id="delete-form" method="POST" class="w-full md:w-auto">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 md:ml-3 md:w-auto md:text-sm">
+                                  Hapus
+                              </button>
+                          </form>
+                          <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 md:mt-0 md:w-auto md:text-sm" x-on:click="show = false">
+                              Batal
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              {{-- end modal --}}
             </div>
         </div>
       </div>
